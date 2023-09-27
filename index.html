@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.101.0">
+  <title>Album example · Bootstrap v4.6</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/album/">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .bg-dark {
+      background-color: #343a40 !important;
+    }
+
+    .text-white {
+      color: #ffffff !important;
+    }
+
+    .btn-danger {
+      background-color: #dc3545 !important;
+      border-color: #dc3545 !important;
+    }
+
+    .jumbotron {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      margin-bottom: 0;
+      background-color: #343a40;
+    }
+
+    @media (min-width: 768px) {
+      .jumbotron {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+    }
+
+    .jumbotron p:last-child {
+      margin-bottom: 0;
+    }
+
+    .jumbotron h1 {
+      font-weight: 300;
+    }
+
+    .jumbotron .container {
+      max-width: 40rem;
+    }
+
+    .card img {
+      aspect-ratio: 1/1.7;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    footer {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    footer p {
+      margin-bottom: .25rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">About</h4>
+            <p class="text-muted">
+              Add some information about the album below, the author, or any
+              other background context. Make it a few sentences long so folks
+              can pick up some informative tidbits. Then, link them off to
+              some social networking sites or contact information.
+            </p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contact</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Follow on Twitter</a></li>
+              <li><a href="#" class="text-white">Like on Facebook</a></li>
+              <li><a href="#" class="text-white">Email me</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+            <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+          </svg>
+          <strong style="padding-left: 8px;">Album</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main role="main" class="bg-dark">
+    <section class="container py-5">
+      <div class="text-center my-5">
+        <input onkeyup="searchBook(event)" type="text" placeholder="Cerca..." class="form-control" />
+      </div>
+      <h2 style="color: white;">Shooping Cart: <span class="totale">0</span> EUR</h2>
+      <button class="btn btn-warning btn-sm" onclick="emptyCart()"> Svuota </button>
+      <ul class="list-group">
+      </ul>
+    </section>
+
+    <div class="album py-5 bg-dark">
+      <div class="container">
+        <div class="row"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Back to top</a>
+      </p>
+      <p>
+        Album example is &copy; Bootstrap, but please download and customize
+        it for yourself!
+      </p>
+      <p>
+        New to Bootstrap? <a href="/">Visit the homepage</a> or read our
+        <a href="../getting-started/introduction/">getting started guide</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="./index.js"></script>
+  <script>
+    const url = "https://striveschool-api.herokuapp.com/books"
+
+    window.onload = () => {
+      fetchBooks()
+    }
+    const fetchBooks = () => {
+      fetch(url)
+        .then((raw) => raw.json())
+        .then((res) => {
+          let cont = document.querySelector(".album .row")
+
+          cont.innerHTML = res
+            .map((book) => {
+              return ` <div class='col col-3'> <div class="card mb-4 shadow-sm" id='book_${book.asin}'>
+                    <img src='${book.img}' />
+
+                    <div class="card-body">
+                      <p class='font-weight-bold text-truncate book-title'> ${book.title} </p>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        
+                        <button class='btn btn-primary btn-sm' onclick="addToCart('${book.title}', '${book.price}', '${book.asin}')"> EUR ${book.price} </button>
+                        <button class='btn btn-secondary btn-sm'> Nascondi </button>
+                      </div>
+                    </div>
+                  </div> </div>`
+            })
+            .join("")
+        })
+        .catch((err) => console.error(err))
+    }
+
+    const addToCart = (title, price, asin) => {
+      const book = document.querySelector("#book_" + asin)
+      book.style.border = "2px green solid"
+      const cart = document.querySelector(".list-group")
+      cart.innerHTML += `
+      <li class="list-group-item" style="margin-top:8px;">${title}, ${price} <button class='btn btn-danger btn-sm' onclick='removeFromCart(event, "${asin}", "${price}")'> X </button></li>
+      
+      `
+      const totale = document.querySelector("h1 span")
+      totale.innerText = (Number(totale.innerText) + Number(price)).toFixed(2)
+    }
+
+    const searchBook = (ev) => {
+      let query = ev.target.value
+      let allTitles = document.querySelectorAll(".book-title")
+      console.log(
+        query,
+        allTitles[0].innerText.toLowerCase().includes(query.toLowerCase())
+      )
+      allTitles.forEach((title) => {
+        const currCard = title.parentElement.parentElement.parentElement
+        if (!title.innerText.toLowerCase().includes(query.toLowerCase())) {
+          currCard.style.display = "none"
+        } else {
+          currCard.style.display = "block"
+        }
+      })
+    }
+
+    const removeFromCart = (event, asin, price) => {
+      event.target.closest("li").remove()
+      const totale = document.querySelector("h1 span")
+      totale.innerText = (Number(totale.innerText) - Number(price)).toFixed(2)
+      const book = document.querySelector("#book_" + asin)
+      book.style.border = "none"
+    }
+
+    const emptyCart = () => {
+        document.querySelector(".list-group").innerHTML = ""
+        document.querySelectorAll(".card").forEach(card => card.style.border = "none")
+        const totale = document.querySelector("h1 span")
+        totale.innerText = "0"
+    }
+  </script>
+</body>
+</html>
+
